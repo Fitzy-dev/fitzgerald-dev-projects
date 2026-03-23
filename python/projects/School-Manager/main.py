@@ -11,6 +11,8 @@ def main(): # Main function to create instances of Student and Teacher and displ
     teacher2 = Teacher("Dr. Johnson", 50, "Chemistry")
     # Display information for all students and teachers
     student1.display_info()
+    print(student1) # Print the string representation of student1 using the __str__ method
+    print(student1.is_senior()) # Check if student1 is a senior and print the result
     student2.display_info()
     teacher1.display_info()
     teacher2.display_info()
