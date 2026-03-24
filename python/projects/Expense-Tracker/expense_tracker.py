@@ -18,6 +18,17 @@ def add_expense (expenses, category, amount): # Add a new expense to the specifi
             expenses[category].append(amount)
             return f"Expense of {amount} added to {category} category successfully!"
 
+def remove_expense(expenses, category, amount): # Remove an expense from the specified category in the expenses dictionary
+    category = category.lower()
+    if not category in expenses:
+        return f"Category '{category}' does not exist! Cannot remove expense."
+    else:
+        if amount in expenses[category]:
+            expenses[category].remove(amount)
+            return f"Expense of {amount} removed from {category} category successfully!"
+        else:
+            return f"Expense of {amount} not found in {category} category! Cannot remove expense."
+
 def get_total(expenses, category): # Get the total expenses for a specific category
     category = category.lower()
     if not category in expenses:
@@ -47,6 +58,8 @@ print(add_expense(expenses, "Food", 50))
 print(add_expense(expenses, "Transportation", 20))
 print(add_expense(expenses, "Entertainment", 30))
 print(add_expense(expenses, "Food", 25))
+
+print(remove_expense(expenses, "Food", 25))
 
 print(get_total(expenses, "Food"))
 print(get_total(expenses, "Transportation"))
