@@ -6,10 +6,6 @@ Shcool Project
 
 ⸻
 
-🚀 Features     •    Reverses an array in-place using pointers     •    Demonstrates pointer arithmetic (*, +, -)     •    Avoids array indexing inside the function     •    Efficient O(n) time complexity     •    Includes before-and-after output for verification
-
-⸻
-
 🧠 Concepts Used     •    Classes     •    Inheirtance     •    Protected Data Types    •    Functions and parameters    
 
 ▶️ How to Run     1.    Save the file as school.cpp 2. Run as g++ school.cpp -o school
