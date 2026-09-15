@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+#game-container {
+  position: relative;
+  width: 800px;
+  max-width: 100%;
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 800 / 300;
+  background: #ffffff;
+  border: 2px solid #cccccc;
+  /* milestone 11: tap-anywhere-on-canvas is the jump input, so disable the
+     browser's default touch gestures (scroll/pinch-zoom) on the canvas and
+     the mobile tap-highlight flash, for a cleaner, lower-latency tap. */
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* milestone 13: per-state visual accent on the canvas border, so a run
+   ending reads as a distinct visual event (not just overlay text). */
+#game-container[data-state="game-over"] #game-canvas {
+  border-color: #a83232;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  pointer-events: none;
+  /* milestone 13: fade overlays in/out instead of an abrupt display swap.
+     pointer-events stays none always — all interaction goes through the
+     canvas's own pointerdown/keydown listeners, the overlay is purely
+     visual and never intercepts taps/clicks, visible or not. */
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.overlay.visible {
+  opacity: 1;
+}
+
+.overlay h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  color: #222222;
+}
+
+/* milestone 13: distinct title color on game-over vs. the neutral start
+   screen, so which state you're looking at is readable at a glance. */
+#game-over-screen h1 {
+  color: #a83232;
+}
+
+.overlay p {
+  margin: 0.25rem 0 0;
+  color: #555555;
+}
+
+/* milestone 11: keep overlay text legible on narrow/small screens. */
+@media (max-width: 420px) {
+  .overlay h1 {
+    font-size: 1.35rem;
+  }
+  .overlay p {
+    font-size: 0.85rem;
+  }
+}
