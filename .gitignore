@@ -205,3 +205,34 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ==============================
+# Local Development
+# ==============================
+
+# macOS
+.DS_Store
+*.dSYM/
+
+# VS Code
+.vscode/
+
+# C/C++ build artifacts
+*.o
+*.out
+*.exe
+
+# Common locally compiled executables
+cpp/projects/program
+cpp/projects/task_list
+cpp/projects/school
+cpp/projects/date_class
+cpp/projects/employee_class_project
+cpp/projects/factorial_project
+cpp/projects/schedule_project
+cpp/projects/struct_example
+cpp/projects/School_Class_Project/program
+
+# Local runtime/generated data
+python/hangman_score.txt
+python/projects/hangman_score.txt
