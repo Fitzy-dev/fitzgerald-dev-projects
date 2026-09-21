@@ -233,6 +233,7 @@ cpp/projects/schedule_project
 cpp/projects/struct_example
 cpp/projects/School_Class_Project/program
 cpp/projects/School_Class_Project/Template-Functions/temp_min-max
+cpp/**/program
 # Local runtime/generated data
 python/hangman_score.txt
 python/projects/hangman_score.txt
